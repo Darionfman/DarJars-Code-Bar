@@ -1,0 +1,22 @@
+{
+  "name": "code-bar",
+  "version": "1.0.0",
+  "description": "A code snippet storage for completed code challenges and toy problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darionfman/DarJars-Code-Bar.git"
+  },
+  "author": "Darion Freeman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Darionfman/DarJars-Code-Bar/issues"
+  },
+  "homepage": "https://github.com/Darionfman/DarJars-Code-Bar#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
