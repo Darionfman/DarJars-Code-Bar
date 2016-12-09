@@ -26,5 +26,11 @@ module.exports = {
       console.log('Can not find snippet, may not exist')
       return res.status(404).send(snippet)
     })
+  },
+  removeCard: (req, res) => {
+    const id = req.params.id
+    Snippet.delete(id)
+    .then(numDel => res.status(200).send({id: numDel}))
+    .then(() => res.end())
   }
 }
