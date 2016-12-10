@@ -4,6 +4,8 @@ const router = require('express').Router()
 
 router.route('/').get((req,res) => res.sendFile(Path.resolve(__dirname, '../public/index.html')))
 
-router.route('/api/snippet').post(Snippet.createSnippet)
+router.route('/api/snippets').post(Snippet.createSnippet)
+
+router.route('/api/snippets').get(Snippet.getAllSnippets)
 
 module.exports = router
