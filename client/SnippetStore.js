@@ -1,17 +1,18 @@
-import {observable, action} from 'mobx'
+import {observable, action, useStrict} from 'mobx'
 import axios from 'axios'
 
+useStrict(true)
 class SnippetStore {
-  @observable snippets
+  @observable snippets = null
 
   constructor(){
-    this.snippets = []
+    this.snippets 
   }
 
-  fetchSnippets(){
+  @action fetchSnippets(){
     //axios call to fetch all code snippets
     return axios.get('/api/snippets')
-    .then(action((snips) => this.snippets.push(snips.data)))
+    .then(action((snips) => this.snippets = snips.data ))
   }
 
 }

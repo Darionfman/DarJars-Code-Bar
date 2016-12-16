@@ -9,10 +9,13 @@ export default class App extends React.Component {
   }
   componentDidMount() {
     snippetStore.fetchSnippets()
+    .then((snips) => {
+      console.log(snippetStore.snippets)
+    })
   }
   render(){
     const snip = snippetStore.snippets
-    return <div>{snip[snip.length - 1]}</div>
+    return <div>{snip}</div>
   }
 
 }
