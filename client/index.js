@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import App from './components/App'
 import List from './components/List'
 import AddSnippet from './components/AddSnippet'
-import SnippetPage from './components/SnippetPage'
+import SnippetPage from './components/SnippetSingle'
 import SnippetStore from './SnippetStore'
 
 render(
@@ -13,7 +13,7 @@ render(
         <Route path="/" component={App}>
           <IndexRoute component={List}/>
           <Route path="/add" component={AddSnippet} />
-          <Route path="/snippet/:id" component={SnippetPage} />
+          <Route path="/snippet/:id" component={SnippetSingle} />
         </Route>
       </Router>,
   document.getElementById('app')

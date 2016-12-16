@@ -2,7 +2,7 @@ import React from 'react'
 import {observer} from 'mobx-react';
 
 @observer
-export default class SnippetPage extends React.Component {
+export default class SnippetSingle extends React.Component {
   constructor() {
     super()
   }
