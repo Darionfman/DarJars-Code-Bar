@@ -23,7 +23,8 @@ const common = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['es2015', 'react', 'react-hmre']
+          presets: ['es2015', 'react', 'react-hmre'],
+          plugins: ['transform-decorators-legacy', 'transform-class-properties']
         }
       },
       {
