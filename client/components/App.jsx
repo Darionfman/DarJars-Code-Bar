@@ -1,5 +1,6 @@
 import React from 'react'
-import {observer} from 'mobx-react';
+import {observer} from 'mobx-react'
+import snippetStore from '../SnippetStore'
 
 @observer
 export default class App extends React.Component {
@@ -7,13 +8,12 @@ export default class App extends React.Component {
     super()
   }
   componentDidMount() {
-    console.log(this.props)
+    snippetStore.fetchSnippets()
   }
   render(){
-    return <div>Suh Dude!</div>
+    const snip = snippetStore.snippets
+    return <div>{snip[snip.length - 1]}</div>
   }
 
 }
-App.propTypes = {
-  store: React.PropTypes.object.isRequired,
-}
+

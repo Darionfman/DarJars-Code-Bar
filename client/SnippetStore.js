@@ -2,16 +2,20 @@ import {observable, action} from 'mobx'
 import axios from 'axios'
 
 class SnippetStore {
-  @observable snippets = null
+  @observable snippets
 
-  @action fetchSnippets(){
-    //axios call to fetch all code snippets
-    axios.get('api/snippets')
-    .then(snippets => this.snippets = snippets)
+  constructor(){
+    this.snippets = []
   }
-  
+
+  fetchSnippets(){
+    //axios call to fetch all code snippets
+    return axios.get('/api/snippets')
+    .then(action((snips) => this.snippets.push(snips.data)))
+  }
+
 }
+const snippetStore = new SnippetStore()
 
-const store = new SnippetStore
-
-export default store
+export default snippetStore
+export { SnippetStore }

@@ -6,6 +6,6 @@ router.route('/').get((req,res) => res.sendFile(Path.resolve(__dirname, '../publ
 
 router.route('/api/snippets').post(Snippet.createSnippet)
 
-router.route('/api/snippets').get(Snippet.getAllSnippets)
+router.route('/api/snippets').get((req,res) => res.send('stuff'))
 
 module.exports = router

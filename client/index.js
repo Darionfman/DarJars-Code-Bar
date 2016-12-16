@@ -6,19 +6,16 @@ import App from './components/App'
 import List from './components/List'
 import AddSnippet from './components/AddSnippet'
 import SnippetPage from './components/SnippetPage'
-import store from './SnippetStore'
+import SnippetStore from './SnippetStore'
 
 render(
-    <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={List}/>
           <Route path="/add" component={AddSnippet} />
           <Route path="/snippet/:id" component={SnippetPage} />
         </Route>
-      </Router>
-    </Provider>,
+      </Router>,
   document.getElementById('app')
 )
 
-module.hot.accept()
