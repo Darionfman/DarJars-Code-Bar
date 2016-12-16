@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import App from './components/App'
 import List from './components/List'
 import AddSnippet from './components/AddSnippet'
-import SnippetPage from './components/SnippetSingle'
+import SnippetSingle from './components/SnippetSingle'
 import SnippetStore from './SnippetStore'
 
 render(
