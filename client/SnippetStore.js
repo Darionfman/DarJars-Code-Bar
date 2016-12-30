@@ -3,7 +3,7 @@ import axios from 'axios'
 
 useStrict(true)
 class SnippetStore {
-  @observable snippets = null
+  @observable snippets = []
 
   constructor(){
     this.snippets 

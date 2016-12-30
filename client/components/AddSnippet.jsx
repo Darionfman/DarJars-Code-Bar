@@ -10,33 +10,23 @@ export default class AddSnippet extends React.Component {
   componentDidMount() {
     console.log('this.props')
   }
-  FieldGroup({ id, label, help, ...props }) {
-    return (
-      <bs.FormGroup controlId={id}>
-        <bs.ControlLabel>{label}</bs.ControlLabel>
-        <bs.FormControl {...props} />
-        {help && <bs.HelpBlock>{help}</bs.HelpBlock>}
-      </bs.FormGroup>
-    )
-  }
-  submitValues(e){
+
+  submitValues(e,form){
     e.preventDefault()
-    console.log(`the refs are not working for some reason`)
+    console.log(form)
   }
   render(){
-    let FieldGroup = this.FieldGroup
+    const FieldGroup = this.FieldGroup
+    let form = {}
     return (
       <bs.Grid>
-        <form onSubmit={(e) => this.submitValues(e)}>
+        <form onSubmit={(e) => this.submitValues(e,form)}>
           <bs.Row>
             <bs.Col md={12}>
-            <FieldGroup
-              id='Title'
-              type='text'
-              label='Snippet Title'
-              placeholder='Insert Snippet Title'
-              defaultValue=''
-            />
+              <bs.FormGroup controlId='Title'>
+                <bs.ControlLabel>Snippet Title</bs.ControlLabel>
+                <bs.FormControl defaultValue='' type='text' placeholder='Insert Snippet Title' inputRef={el => form.title = el} />
+              </bs.FormGroup>
             </bs.Col>
           </bs.Row>
         </form>
